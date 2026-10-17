@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Our registry · Aaron & Sarah</title>
+  <meta name="description" content="Explore Aaron and Sarah’s wedding registry on Zola."/>
+  <link rel="icon" href="./favicon.svg"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./registry.css"/>
+</head>
+<body>
+  <header><a href="./" class="monogram" aria-label="Aaron and Sarah home">A<span>&</span>S</a><a class="back" href="./#registry">← Back to our wedding</a></header>
+  <main>
+    <section class="intro"><p class="eyebrow">A little something for our next chapter</p><h1>Your presence.<br/><em>The greatest gift.</em></h1><p>Celebrating with you means the world to us.<br/>If you’d like to give a gift, you can explore our registry below.</p></section>
+    <section class="gift-gallery" aria-label="Our Zola gift registry"><div class="gallery-heading"><h2>Our registry</h2><a href="https://www.zola.com/wedding/aaron_sarah_2027/registry" target="_blank" rel="noopener noreferrer">Open on Zola ↗</a></div>
+      <p class="gallery-note">Gifts and availability are provided by Zola. If the gallery doesn’t appear, use “Open on Zola” above.</p>
+      <div id="registry-widget"><a class="zola-registry-embed" href="https://www.zola.com/wedding/aaron_sarah_2027/registry" data-registry-key="aaron_sarah_2027">View Aaron & Sarah’s registry on Zola ↗</a></div>
+      <p id="widget-error" hidden>The gallery could not load. You can still <a href="https://www.zola.com/wedding/aaron_sarah_2027/registry" target="_blank" rel="noopener noreferrer">browse our registry directly on Zola ↗</a>.</p>
+    </section>
+  </main><footer>Aaron <em>&</em> Sarah <span>August 22, 2027 · Lake Forest, Illinois</span></footer>
+  <script>
+    const observer = new MutationObserver(() => {
+      const frame = document.querySelector('.zola-registry-iframe');
+      if (frame) { frame.title = 'Aaron and Sarah’s Zola gift registry'; observer.disconnect(); }
+    });
+    observer.observe(document.getElementById('registry-widget'), { childList: true, subtree: true });
+    const script = document.createElement('script');
+    script.src = 'https://widget.zola.com/js/widget.js'; script.async = true;
+    script.onerror = () => { document.getElementById('widget-error').hidden = false; };
+    document.body.appendChild(script);
+  </script>
+</body></html>
